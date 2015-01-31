@@ -31,8 +31,9 @@ public class Sorting {
 	}
 
 	/*
-	 * Sorting a string is possible only because it implements the Comparable
-	 * interface or else we would have got a class cast exception.
+	 * Sorting a java.lang.String and java.lang.Integer is possible only because
+	 * it implements the Comparable interface or else we would have got a class
+	 * cast exception.
 	 */
 
 	@Test
@@ -67,8 +68,7 @@ public class Sorting {
 	}
 
 	/*
-	 * Sorting works perfectly after implementing Comparable
-	 * ClassCastException
+	 * Sorting works perfectly after implementing Comparable ClassCastException
 	 */
 	@Test
 	public void sortingAnObjectWhichDoesImplementComparable() {
@@ -88,6 +88,63 @@ public class Sorting {
 		 * Need to find a way to assert on List of objects
 		 */
 
+	}
+
+	/*
+	 * Sorting on name by using a comparator. NOTE: we have not touched the Employee.
+	 * NOTE: we are passing a separate Comparator object which knows how to sort
+	 * based on name.
+	 */
+	@Test
+	public void sortingEmployeeOnName() {
+		List<Employee> lExpected = new ArrayList<Employee>();
+		lExpected.add(new Employee("shahbaz", 2));
+		lExpected.add(new Employee("shabby", 3));
+		lExpected.add(new Employee("shabbir", 1));
+		lExpected.add(new Employee("test", 4));
+		lExpected.add(new Employee("asset", 5));
+
+		List<Employee> lOriginal = new ArrayList<Employee>();
+		lOriginal.add(new Employee("shahbaz", 2));
+		lOriginal.add(new Employee("shabby", 3));
+		lOriginal.add(new Employee("shabbir", 1));
+		lOriginal.add(new Employee("test", 4));
+		lOriginal.add(new Employee("asset", 5));
+
+		Collections.sort(lOriginal, new EmployeeComparatorOnName());
+
+		/*
+		 * Need to find a way to assert on List of objects
+		 */
+	}
+	
+	
+	/*
+	 * Sorting on id by using a comparator. NOTE: we have not touched the Employee.
+	 * NOTE: we are passing a separate Comparator object which knows how to sort
+	 * based on id.
+	 */
+	@Test
+	public void sortingEmployeeOnId() {
+		List<Employee> lExpected = new ArrayList<Employee>();
+		lExpected.add(new Employee("shahbaz", 2));
+		lExpected.add(new Employee("shabby", 3));
+		lExpected.add(new Employee("shabbir", 1));
+		lExpected.add(new Employee("test", 4));
+		lExpected.add(new Employee("asset", 5));
+
+		List<Employee> lOriginal = new ArrayList<Employee>();
+		lOriginal.add(new Employee("shahbaz", 2));
+		lOriginal.add(new Employee("shabby", 3));
+		lOriginal.add(new Employee("shabbir", 1));
+		lOriginal.add(new Employee("test", 4));
+		lOriginal.add(new Employee("asset", 5));
+
+		Collections.sort(lOriginal, new EmployeeComparatorOnId());
+
+		/*
+		 * Need to find a way to assert on List of objects
+		 */
 	}
 
 }
