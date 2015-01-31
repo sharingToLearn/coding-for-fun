@@ -27,7 +27,7 @@ public class Sorting {
 
 	/*
 	 * Sorting a string is possible only because it implements the Comparable
-	 * interface.
+	 * interface or else we would have got a class cast exception.
 	 */
 
 	@Test
