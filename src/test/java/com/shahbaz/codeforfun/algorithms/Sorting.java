@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.ArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -68,7 +66,7 @@ public class Sorting {
 	}
 
 	/*
-	 * Sorting works perfectly after implementing Comparable ClassCastException
+	 * Sorting works perfectly after implementing Comparable
 	 */
 	@Test
 	public void sortingAnObjectWhichDoesImplementComparable() {
@@ -91,9 +89,9 @@ public class Sorting {
 	}
 
 	/*
-	 * Sorting on name by using a comparator. NOTE: we have not touched the Employee.
-	 * NOTE: we are passing a separate Comparator object which knows how to sort
-	 * based on name.
+	 * Sorting on name by using a comparator. NOTE: we have not touched the
+	 * Employee. NOTE: we are passing a separate Comparator object which knows
+	 * how to sort based on name.
 	 */
 	@Test
 	public void sortingEmployeeOnName() {
@@ -117,12 +115,11 @@ public class Sorting {
 		 * Need to find a way to assert on List of objects
 		 */
 	}
-	
-	
+
 	/*
-	 * Sorting on id by using a comparator. NOTE: we have not touched the Employee.
-	 * NOTE: we are passing a separate Comparator object which knows how to sort
-	 * based on id.
+	 * Sorting on id by using a comparator. NOTE: we have not touched the
+	 * Employee. NOTE: we are passing a separate Comparator object which knows
+	 * how to sort based on id.
 	 */
 	@Test
 	public void sortingEmployeeOnId() {
@@ -141,6 +138,8 @@ public class Sorting {
 		lOriginal.add(new Employee("asset", 5));
 
 		Collections.sort(lOriginal, new EmployeeComparatorOnId());
+
+		TestingObjects.assertTrue(lExpected, lOriginal);
 
 		/*
 		 * Need to find a way to assert on List of objects

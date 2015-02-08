@@ -33,4 +33,16 @@ public class Employee {
 		this.name = name;
 	}
 
+	public boolean equals(Object obj) {
+
+		if (obj instanceof Employee) {
+			Employee emp = (Employee) obj;
+			if (this.id == emp.getId()
+					&& this.name.compareTo(emp.getName()) == 0) {
+				return true;
+			}
+		}
+		return false;
+
+	}
 }

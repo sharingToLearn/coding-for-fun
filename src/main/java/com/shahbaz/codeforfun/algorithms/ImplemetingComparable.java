@@ -29,8 +29,9 @@ public class ImplemetingComparable implements Comparable<ImplemetingComparable> 
 	 */
 	public int compareTo(ImplemetingComparable paramObj) {
 
-		int compareValeOfi = ((ImplemetingComparable) paramObj).getI();
+ 		int compareValeOfi = ((ImplemetingComparable) paramObj).getI();
 		return this.i - compareValeOfi;
+
 	}
 	
 	/*================= Disadvantages ========================
