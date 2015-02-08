@@ -96,11 +96,11 @@ public class Sorting {
 	@Test
 	public void sortingEmployeeOnName() {
 		List<Employee> lExpected = new ArrayList<Employee>();
-		lExpected.add(new Employee("shahbaz", 2));
-		lExpected.add(new Employee("shabby", 3));
-		lExpected.add(new Employee("shabbir", 1));
-		lExpected.add(new Employee("test", 4));
 		lExpected.add(new Employee("asset", 5));
+		lExpected.add(new Employee("shabbir", 1));
+		lExpected.add(new Employee("shabby", 3));
+		lExpected.add(new Employee("shahbaz", 2));
+		lExpected.add(new Employee("test", 4));
 
 		List<Employee> lOriginal = new ArrayList<Employee>();
 		lOriginal.add(new Employee("shahbaz", 2));
@@ -110,6 +110,8 @@ public class Sorting {
 		lOriginal.add(new Employee("asset", 5));
 
 		Collections.sort(lOriginal, new EmployeeComparatorOnName());
+
+		TestingObjects.assertTrue(lExpected, lOriginal, "id");
 
 		/*
 		 * Need to find a way to assert on List of objects
@@ -124,9 +126,9 @@ public class Sorting {
 	@Test
 	public void sortingEmployeeOnId() {
 		List<Employee> lExpected = new ArrayList<Employee>();
+		lExpected.add(new Employee("shabbir", 1));
 		lExpected.add(new Employee("shahbaz", 2));
 		lExpected.add(new Employee("shabby", 3));
-		lExpected.add(new Employee("shabbir", 1));
 		lExpected.add(new Employee("test", 4));
 		lExpected.add(new Employee("asset", 5));
 
@@ -139,7 +141,7 @@ public class Sorting {
 
 		Collections.sort(lOriginal, new EmployeeComparatorOnId());
 
-		TestingObjects.assertTrue(lExpected, lOriginal);
+		TestingObjects.assertTrue(lExpected, lOriginal, "id");
 
 		/*
 		 * Need to find a way to assert on List of objects
