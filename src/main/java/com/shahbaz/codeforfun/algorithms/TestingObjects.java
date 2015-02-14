@@ -3,6 +3,7 @@ package com.shahbaz.codeforfun.algorithms;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.commons.lang.WordUtils;
@@ -177,12 +178,12 @@ public class TestingObjects extends Assert {
 	public static List<Method> getSelectedGetterMethods(Class<? extends Object> clazz,String[] selectedAttributes) {
 
 		List<Method> lMethods = new ArrayList<Method>();
-		List<String> capitalAttr=getCapitalized(selectedAttributes);
+		List<String> capitalAttr=Arrays.asList(selectedAttributes);
 		for (Method method : clazz.getMethods()) {
 			for(String attr:capitalAttr)
 			{
 				//check for selected attributes and add it method list
-				if (method.getName().startsWith("get") &&  method.getName().endsWith(attr) && !("getClass".equals(method.getName()))) {
+				if (method.getName().startsWith("get") &&  method.getName().endsWith(WordUtils.capitalize(attr)) && !("getClass".equals(method.getName()))) {
 					lMethods.add(method);
 				}
 			}
@@ -192,15 +193,6 @@ public class TestingObjects extends Assert {
 		return lMethods;
 
 	}
-	//To convert first letter of word to uppercase
-	private static List<String> getCapitalized(String[] selectedAttributes)
-	{
-		List<String> capitalAttr=new ArrayList<String>();
-		for(int i=0;i<selectedAttributes.length;i++)
-		{
-			capitalAttr.add(WordUtils.capitalize(selectedAttributes[i]));
-		}
-		return capitalAttr;
-	}
+	
 	
 }
