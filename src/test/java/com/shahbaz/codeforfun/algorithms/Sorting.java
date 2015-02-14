@@ -96,18 +96,18 @@ public class Sorting {
 	@Test
 	public void sortingEmployeeOnName() {
 		List<Employee> lExpected = new ArrayList<Employee>();
-		lExpected.add(new Employee("asset", 5));
-		lExpected.add(new Employee("shabbir", 1));
-		lExpected.add(new Employee("shabby", 3));
-		lExpected.add(new Employee("shahbaz", 2));
-		lExpected.add(new Employee("test", 4));
+		lExpected.add(new Employee("asset", 5,5000));
+		lExpected.add(new Employee("shabbir", 1,1000));
+		lExpected.add(new Employee("shabby", 3,3000));
+		lExpected.add(new Employee("shahbaz", 2,2000));
+		lExpected.add(new Employee("test", 4,4000));
 
 		List<Employee> lOriginal = new ArrayList<Employee>();
-		lOriginal.add(new Employee("shahbaz", 2));
-		lOriginal.add(new Employee("shabby", 3));
-		lOriginal.add(new Employee("shabbir", 1));
-		lOriginal.add(new Employee("test", 4));
-		lOriginal.add(new Employee("asset", 5));
+		lOriginal.add(new Employee("shahbaz", 2,2000));
+		lOriginal.add(new Employee("shabby", 3,3000));
+		lOriginal.add(new Employee("shabbir", 1,1000));
+		lOriginal.add(new Employee("test", 4,4000));
+		lOriginal.add(new Employee("asset", 5,5000));
 
 		Collections.sort(lOriginal, new EmployeeComparatorOnName());
 
@@ -126,22 +126,22 @@ public class Sorting {
 	@Test
 	public void sortingEmployeeOnId() {
 		List<Employee> lExpected = new ArrayList<Employee>();
-		lExpected.add(new Employee("shabbir", 1));
-		lExpected.add(new Employee("shahbaz", 2));
-		lExpected.add(new Employee("shabby", 3));
-		lExpected.add(new Employee("test", 4));
-		lExpected.add(new Employee("asset", 5));
+		lExpected.add(new Employee("shabbir", 1,1000));
+		lExpected.add(new Employee("shahbaz", 2,2000));
+		lExpected.add(new Employee("shabby", 3,3000));
+		lExpected.add(new Employee("test", 4,4000));
+		lExpected.add(new Employee("asset", 5,5000));
 
 		List<Employee> lOriginal = new ArrayList<Employee>();
-		lOriginal.add(new Employee("shahbaz", 2));
-		lOriginal.add(new Employee("shabby", 3));
-		lOriginal.add(new Employee("shabbir", 1));
-		lOriginal.add(new Employee("test", 4));
-		lOriginal.add(new Employee("asset", 5));
+		lOriginal.add(new Employee("shahbaz", 2,2000));
+		lOriginal.add(new Employee("shabby", 3,300));
+		lOriginal.add(new Employee("shabbir", 1,1000));
+		lOriginal.add(new Employee("test", 4,4000));
+		lOriginal.add(new Employee("asset", 5,5000));
 
 		Collections.sort(lOriginal, new EmployeeComparatorOnId());
-
-		TestingObjects.assertTrue(lExpected, lOriginal, "id");
+		String[] compareBasedOn={"id", "salary"};
+		TestingObjects.assertTrue(lExpected, lOriginal, compareBasedOn);
 
 		/*
 		 * Need to find a way to assert on List of objects

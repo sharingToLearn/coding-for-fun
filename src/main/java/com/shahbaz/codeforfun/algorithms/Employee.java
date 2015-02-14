@@ -11,10 +11,13 @@ public class Employee {
 	private int id;
 
 	private String name;
+	
+	private double salary;
 
-	public Employee(String name, int id) {
+	public Employee(String name, int id,double salary) {
 		this.name = name;
 		this.id = id;
+		this.salary = salary;
 	}
 
 	public int getId() {
@@ -33,16 +36,15 @@ public class Employee {
 		this.name = name;
 	}
 
-	public boolean equals(Object obj) {
-
-		if (obj instanceof Employee) {
-			Employee emp = (Employee) obj;
-			if (this.id == emp.getId()
-					&& this.name.compareTo(emp.getName()) == 0) {
-				return true;
-			}
-		}
-		return false;
-
+	public double getSalary() {
+		return salary;
 	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	
+
+	
 }
