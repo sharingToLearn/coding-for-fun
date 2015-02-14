@@ -134,7 +134,7 @@ public class Sorting {
 
 		List<Employee> lOriginal = new ArrayList<Employee>();
 		lOriginal.add(new Employee("shahbaz", 2,2000));
-		lOriginal.add(new Employee("shabby", 3,300));
+		lOriginal.add(new Employee("shabby", 3,3000));
 		lOriginal.add(new Employee("shabbir", 1,1000));
 		lOriginal.add(new Employee("test", 4,4000));
 		lOriginal.add(new Employee("asset", 5,5000));
